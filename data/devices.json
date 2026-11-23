@@ -1,0 +1,1199 @@
+[
+ {
+  "name": "8BitDo Pro 2, Pro 3, SN30 Pro, SF30 Pro in D-input mode",
+  "kind": "controller",
+  "conn": "Bluetooth or USB",
+  "status": "verified",
+  "note": "Pro 3 over Bluetooth"
+ },
+ {
+  "name": "8BitDo Ultimate 2 Wireless (XInput)",
+  "kind": "controller",
+  "conn": "Bluetooth (level); 2.4 GHz receiver (2dc8:310b) or USB for the gamepad",
+  "status": "verified",
+  "note": "Bluetooth: 60 % (reporter, #461); no level over the dongle"
+ },
+ {
+  "name": "AJAZZ AJ159 PRO",
+  "kind": "mouse",
+  "conn": "8K receiver (3151:402d)",
+  "status": "verified",
+  "note": "yes (level only; no charging flag)"
+ },
+ {
+  "name": "AJAZZ AJ179 V2 MAX",
+  "kind": "mouse",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "Alienware Pro Wireless",
+  "kind": "keyboard",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "AM Infinity 8K (Angry Miao)",
+  "kind": "keyboard",
+  "conn": "2.4 GHz receiver",
+  "status": "unconfirmed",
+  "note": "no"
+ },
+ {
+  "name": "Arbiter Studio Akitsu / 3950 / Medium",
+  "kind": "mouse",
+  "conn": "8K receiver or USB cable",
+  "status": "verified",
+  "note": "unverified"
+ },
+ {
+  "name": "Areson/Redragon M915RGB-WL, M913",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver",
+  "status": "verified",
+  "note": "unverified"
+ },
+ {
+  "name": "Astro A50 Gen 5 (Logitech 046D:0B1C)",
+  "kind": "headset",
+  "conn": "Base station",
+  "status": "unconfirmed",
+  "note": "no"
+ },
+ {
+  "name": "ASUS ROG Azoth 96 HE",
+  "kind": "keyboard",
+  "conn": "Shared SPEEDNOVA receiver, paired 1C12",
+  "status": "verified",
+  "note": "Level and charging confirmed in #238 test build; no new hardware retest"
+ },
+ {
+  "name": "ASUS ROG Azoth X",
+  "kind": "keyboard",
+  "conn": "OMNI receiver (0B05:1ACE)",
+  "status": "verified",
+  "note": "yes (level confirmed by reporter)"
+ },
+ {
+  "name": "ASUS ROG Gladius III Aimpoint and other ROG / TUF wireless mice",
+  "kind": "mouse",
+  "conn": "2.4 GHz / 8K receiver or USB cable",
+  "status": "verified",
+  "note": "yes on 8K; 1K/wired untried"
+ },
+ {
+  "name": "ASUS ROG Harpe II Ace / Harpe II Extreme",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver or USB cable",
+  "status": "verified",
+  "note": "Harpe II Ace on its receiver"
+ },
+ {
+  "name": "ASUS ROG OMNI keyboards",
+  "kind": "keyboard",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "ASUS ROG OMNI receiver and TX Gaming Mini Miku",
+  "kind": "mouse",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "ASUS ROG Raikiri II",
+  "kind": "controller",
+  "conn": "2.4 GHz receiver, vendor collection (0B05:1C92)",
+  "status": "verified",
+  "note": "yes (level and charging confirmed by reporter)"
+ },
+ {
+  "name": "ASUS ROG Strix Go 2.4",
+  "kind": "headset",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "ATK V75X",
+  "kind": "keyboard",
+  "conn": "2.4 GHz receiver and USB cable",
+  "status": "verified",
+  "note": "author-confirmed battery and charging on both"
+ },
+ {
+  "name": "ATK X1 Ultimate / X1 Pro / A9 Ultimate / A9 SE / NK NANO Nearlink / Fire X 8K",
+  "kind": "mouse",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "Attack Shark R5 Ultra",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver (373E:0047)",
+  "status": "verified",
+  "note": "yes (level confirmed; charging unverified)"
+ },
+ {
+  "name": "Attack Shark X820 Ultra",
+  "kind": "keyboard",
+  "conn": "2.4 GHz receiver (3151:5006)",
+  "status": "verified",
+  "note": "yes (level confirmed; charging unknown)"
+ },
+ {
+  "name": "ATTACKSHARK X66",
+  "kind": "keyboard",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "Audeze Maxwell",
+  "kind": "headset",
+  "conn": "2.4 GHz dongle or USB-C cable",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "AULA F108 Pro",
+  "kind": "keyboard",
+  "conn": "05ac:024f, exact F108Pro receiver",
+  "status": "verified",
+  "note": "Owner level confirmed in #402; charging unknown"
+ },
+ {
+  "name": "AULA F75 / LEOBOG Hi75C Pro (Compx receiver)",
+  "kind": "keyboard",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "AULA F87 Pro V2C",
+  "kind": "keyboard",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "AULA V9 Max+",
+  "kind": "mouse",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "BEITONG KP40D",
+  "kind": "controller",
+  "conn": "2.4 GHz receiver (20bc:515c); one controller in both XInput and Windows.Gaming.Input, one matching receiver",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "Bluetooth devices, tested on the 1MORE SonoFlow headset (users also report Audio-Technica and JBL Tune 760NC headphones working)",
+  "kind": "other",
+  "conn": "Bluetooth (on by default, can be turned off in the menu)",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "CHERRY MX 3.0S Wireless",
+  "kind": "keyboard",
+  "conn": "2.4 GHz receiver or USB cable",
+  "status": "verified",
+  "note": "unverified"
+ },
+ {
+  "name": "Cooler Master MM712 / MM731",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver or USB cable",
+  "status": "verified",
+  "note": "unverified"
+ },
+ {
+  "name": "Corsair Dark Core RGB Pro SE",
+  "kind": "mouse",
+  "conn": "2.4 GHz dongle",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "Corsair HS80 RGB Wireless (original)",
+  "kind": "headset",
+  "conn": "Direct USB cable or 2.4 GHz receiver",
+  "status": "verified",
+  "note": "yes (charging inferred when connected by USB)"
+ },
+ {
+  "name": "Corsair K65 PLUS Wireless",
+  "kind": "keyboard",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "Corsair M65 RGB Ultra Wireless",
+  "kind": "mouse",
+  "conn": "Slipstream receiver or USB cable",
+  "status": "verified",
+  "note": "yes (battery and charging)"
+ },
+ {
+  "name": "Corsair M75 Wireless / Sabre v2 Pro Ultralight",
+  "kind": "mouse",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "Corsair Virtuoso RGB Wireless SE / XT",
+  "kind": "headset",
+  "conn": "Slipstream receiver or USB cable",
+  "status": "verified",
+  "note": "yes for the SE on the Multi-Device receiver; XT untried"
+ },
+ {
+  "name": "Corsair Void Elite Wireless",
+  "kind": "headset",
+  "conn": "2.4 GHz receiver",
+  "status": "unconfirmed",
+  "note": "likely"
+ },
+ {
+  "name": "Corsair Void v2 Wireless, Virtuoso Max Wireless, HS80 Max Wireless",
+  "kind": "headset",
+  "conn": "Wireless receiver",
+  "status": "unconfirmed",
+  "note": "no"
+ },
+ {
+  "name": "Cougar Revenger Pro 4K",
+  "kind": "mouse",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "DAREU A950",
+  "kind": "mouse",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "Darmoshark N5",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver (1915:0723) or USB cable",
+  "status": "verified",
+  "note": "yes (level confirmed by reporter; charging unknown)"
+ },
+ {
+  "name": "Delux M900 Pro",
+  "kind": "mouse",
+  "conn": "1d57:fa65, passive receiver",
+  "status": "verified",
+  "note": "Owner 74% report in #407; charging not newly verified"
+ },
+ {
+  "name": "DJI Mic Mini 2",
+  "kind": "other",
+  "conn": "USB receiver, interface 6 with WinUSB",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "Endgame Gear XM2we",
+  "kind": "mouse",
+  "conn": "Original 2.4 GHz receiver (3367:1961)",
+  "status": "verified",
+  "note": "yes (battery and charging)"
+ },
+ {
+  "name": "EWEADN S9",
+  "kind": "mouse",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "EWEADN X23 Pro",
+  "kind": "mouse",
+  "conn": "04f3:026f, YDX receiver",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "Fantech Helios Go XD5; Redragon Invader Pro",
+  "kind": "controller",
+  "conn": "2.4 GHz receiver or USB cable",
+  "status": "verified",
+  "note": "unverified"
+ },
+ {
+  "name": "Finalmouse UltralightX",
+  "kind": "mouse",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "FlyDigi Vader 5 Pro",
+  "kind": "controller",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "Fractal Design Scape",
+  "kind": "headset",
+  "conn": "2.4 GHz dongle or USB-C cable",
+  "status": "verified",
+  "note": "unverified"
+ },
+ {
+  "name": "G-Wolves 8K",
+  "kind": "mouse",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "G-Wolves HSK Pro ACE and the other models with a receiver of their own",
+  "kind": "mouse",
+  "conn": "The model's own receiver or USB cable",
+  "status": "unconfirmed",
+  "note": "no"
+ },
+ {
+  "name": "G-Wolves WARG, HTS Plus (Pro), HTXU, Lycan, Fenrir Pro / Asym, HTX Mini",
+  "kind": "mouse",
+  "conn": "8K receiver or USB cable",
+  "status": "unconfirmed",
+  "note": "no"
+ },
+ {
+  "name": "GameSir Cyclone 2",
+  "kind": "controller",
+  "conn": "2.4 GHz receiver (3537:100b) or charging identity (3537:0575); both show up as an Xbox 360 controller",
+  "status": "verified",
+  "note": "receiver and charging confirmed by reporter (86 %, matching GameSir Connect)"
+ },
+ {
+  "name": "GameSir G7 Pro 8K (Aimlabs and other editions)",
+  "kind": "controller",
+  "conn": "2.4 GHz dongle, USB cable or charging dock (shows up as an Xbox 360 controller); one controller in both XInput and Windows.Gaming.Input",
+  "status": "verified",
+  "note": "yes (Aimlabs edition)"
+ },
+ {
+  "name": "GameSir G7 Pro; FlyDigi Vader Pro (tested by users)",
+  "kind": "controller",
+  "conn": "2.4 GHz receiver (shows up as an Xbox controller)",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "GANSS GS3075T",
+  "kind": "keyboard",
+  "conn": "2.4 GHz receiver (0C45:FEFE)",
+  "status": "verified",
+  "note": "yes (level and charging)"
+ },
+ {
+  "name": "Glorious Model O / O- / D / D- Wireless",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver",
+  "status": "verified",
+  "note": "Model O: level and charging (reporter, #281); O-: confirmed by its owner; D/D- untried"
+ },
+ {
+  "name": "Hitscan Hyperlight",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver or USB cable",
+  "status": "unconfirmed",
+  "note": "no"
+ },
+ {
+  "name": "Hitscan Hyperlight 8K",
+  "kind": "mouse",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "HyperX Cloud Alpha 2",
+  "kind": "headset",
+  "conn": "2.4 GHz station",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "HyperX Cloud Alpha Wireless",
+  "kind": "headset",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "HyperX Cloud Core Wireless",
+  "kind": "headset",
+  "conn": "2.4 GHz dongle or USB-C",
+  "status": "unconfirmed",
+  "note": "likely"
+ },
+ {
+  "name": "HyperX Cloud Flight Wireless",
+  "kind": "headset",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "HyperX Cloud II Core Wireless",
+  "kind": "headset",
+  "conn": "2.4 GHz dongle or USB cable",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "HyperX Cloud II Wireless",
+  "kind": "headset",
+  "conn": "2.4 GHz dongle",
+  "status": "unconfirmed",
+  "note": "no"
+ },
+ {
+  "name": "HyperX Cloud II Wireless (Kingston revision)",
+  "kind": "headset",
+  "conn": "2.4 GHz dongle (0951:1718)",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "HyperX Cloud II Wireless (Kingston)",
+  "kind": "headset",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "HyperX Cloud III S Wireless",
+  "kind": "headset",
+  "conn": "2.4 GHz dongle",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "HyperX Cloud III Wireless",
+  "kind": "headset",
+  "conn": "2.4 GHz dongle",
+  "status": "unconfirmed",
+  "note": "no"
+ },
+ {
+  "name": "HyperX Cloud III Wireless (03F0:0FCC receiver)",
+  "kind": "headset",
+  "conn": "2.4 GHz dongle",
+  "status": "verified",
+  "note": "yes (level and charging confirmed by reporter)"
+ },
+ {
+  "name": "HyperX Pulsefire Haste 2 Wireless",
+  "kind": "mouse",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "i-Rocks M31R",
+  "kind": "mouse",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "Inphic In9 Pro and Attack Shark X11 / R1 / X3 Max",
+  "kind": "mouse",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "Inphic In9 Pro, Attack Shark X11 / R1 / X3 Max",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver (1d57:fa65, 1d57:fa60)",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "IO Aurora",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver (3554:fb08), cable (3554:fb09)",
+  "status": "verified",
+  "note": "yes (level and charging)"
+ },
+ {
+  "name": "Jabra (Link 380 / 390)",
+  "kind": "headset",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "JBL Quantum 350 Wireless",
+  "kind": "headset",
+  "conn": "2.4 GHz receiver (0ecb:206b)",
+  "status": "verified",
+  "note": "level only; charging not exposed"
+ },
+ {
+  "name": "JBL Quantum 520 / 650 / 850 / 950 Wireless (and X variants)",
+  "kind": "headset",
+  "conn": "2.4 GHz receiver or USB cable",
+  "status": "verified",
+  "note": "unverified in the app (WDBM tested a 650)"
+ },
+ {
+  "name": "JBL Quantum 910 Wireless",
+  "kind": "headset",
+  "conn": "2.4 GHz dongle",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "Keychron Nape Pro",
+  "kind": "mouse",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "Keychron Ultra-Link 8K, Keychron M5",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver and USB cable",
+  "status": "verified",
+  "note": "level confirmed on hardware (M6 8K and G4, #373); charging from bit 7 of the reply, not yet seen in the app"
+ },
+ {
+  "name": "LAMZU Atlantis V2",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver (3554:F50D) or USB cable (3554:F50F)",
+  "status": "verified",
+  "note": "yes (level and charging)"
+ },
+ {
+  "name": "Lamzu Atlantis V2 (2.4 GHz)",
+  "kind": "mouse",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "LAMZU Maya X",
+  "kind": "mouse",
+  "conn": "8K dongle or USB cable",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "LAMZU Thorn",
+  "kind": "mouse",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "Lofree Flow Lite84",
+  "kind": "keyboard",
+  "conn": "2.4 GHz dongle",
+  "status": "verified",
+  "note": "yes (earlier community report; current guard not hardware-retested)"
+ },
+ {
+  "name": "Lofree Hyzen",
+  "kind": "keyboard",
+  "conn": "2.4 GHz dongle",
+  "status": "unconfirmed",
+  "note": "no"
+ },
+ {
+  "name": "Logitech (more HID++ 2.0 devices, older HID++ 1.0 keyboards and mice, G-series headsets)",
+  "kind": "other",
+  "conn": "Lightspeed, Unifying or Bolt receiver",
+  "status": "unconfirmed",
+  "note": "likely"
+ },
+ {
+  "name": "Logitech G PRO X 2 LIGHTSPEED",
+  "kind": "headset",
+  "conn": "2.4 GHz receiver",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "Logitech G PRO X3 SUPERSTRIKE (mouse)",
+  "kind": "mouse",
+  "conn": "LIGHTSPEED receiver (046d:c54f); USB cable (046d:c0a9)",
+  "status": "verified",
+  "note": "author-confirmed: wireless battery, charging, power-off/reconnect; wired battery and charging, on the previous build and again on the merged one (#504 follow-up); low-battery alert untested"
+ },
+ {
+  "name": "Logitech G325",
+  "kind": "headset",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "Logitech G435 LIGHTSPEED (046D:0ACB, Realtek receiver)",
+  "kind": "headset",
+  "conn": "LIGHTSPEED receiver",
+  "status": "verified",
+  "note": "yes (approximate level; charging unknown)"
+ },
+ {
+  "name": "Logitech G502 LIGHTSPEED, G502 X PLUS",
+  "kind": "mouse",
+  "conn": "Lightspeed receiver",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "Logitech G535",
+  "kind": "headset",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "Logitech MX Revolution",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver (046D:C525)",
+  "status": "verified",
+  "note": "yes (reporter confirmed)"
+ },
+ {
+  "name": "Machenike L7 Arctic / L7 Mix",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver or USB cable",
+  "status": "verified",
+  "note": "unverified"
+ },
+ {
+  "name": "MCHOSE A5 Pro Max",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver or USB cable",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "MCHOSE A7 V2 Ultra",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver",
+  "status": "unconfirmed",
+  "note": "no"
+ },
+ {
+  "name": "MCHOSE G7",
+  "kind": "mouse",
+  "conn": "USB (chip 'YJX-CHIP')",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "MCHOSE K7 V2 Ultra+",
+  "kind": "mouse",
+  "conn": "3837:1018, receiver",
+  "status": "verified",
+  "note": "Owner 85% and charging flags in #403"
+ },
+ {
+  "name": "MCHOSE K87",
+  "kind": "keyboard",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "MCHOSE K87 / G98 Pro",
+  "kind": "keyboard",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "MCHOSE K99 V3",
+  "kind": "keyboard",
+  "conn": "2.4 GHz receiver (3837:3033)",
+  "status": "verified",
+  "note": "yes (tested by @Kolomhon)"
+ },
+ {
+  "name": "MCHOSE M7 Ultra",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "MCHOSE V9 Pro",
+  "kind": "headset",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "MCHOSE X9",
+  "kind": "headset",
+  "conn": "2.4 GHz dongle",
+  "status": "verified",
+  "note": "yes (level, also on Windows: #458); charging unobserved"
+ },
+ {
+  "name": "MonsGeek FUN60 Pro",
+  "kind": "keyboard",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "MOONDROP GM01 Pro",
+  "kind": "mouse",
+  "conn": "2.4 GHz dongle or USB cable",
+  "status": "verified",
+  "note": "unverified"
+ },
+ {
+  "name": "MSI VERSA 300 ELITE, Clutch GM31 / GM41",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver or USB cable",
+  "status": "verified",
+  "note": "unverified"
+ },
+ {
+  "name": "Ninjutso Sora V2; Sprime PM1",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver or USB cable",
+  "status": "verified",
+  "note": "unverified"
+ },
+ {
+  "name": "Ninjutso Sora V3",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver (093a:eb02) or USB cable (093a:e010)",
+  "status": "verified",
+  "note": "yes (battery and charging; wireless and cable, tested by @Cynersi)"
+ },
+ {
+  "name": "Nintendo Switch Pro Controller, Joy-Con (L) / (R)",
+  "kind": "controller",
+  "conn": "Bluetooth",
+  "status": "unconfirmed",
+  "note": "no"
+ },
+ {
+  "name": "NVIDIA SHIELD (2017)",
+  "kind": "controller",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "NZXT Lift Elite Wireless",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver and USB cable",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "Phone or tablet selected in Phone Link (Windows 11)",
+  "kind": "other",
+  "conn": "Phone Link companion cache, no Bluetooth needed",
+  "status": "verified",
+  "note": "Confirmed on a Galaxy S24+ over Wi-Fi"
+ },
+ {
+  "name": "Plantronics Voyager 8200 UC (BT600 adapter)",
+  "kind": "headset",
+  "conn": "Bluetooth headset through the BT600 USB adapter",
+  "status": "verified",
+  "note": "confirmed"
+ },
+ {
+  "name": "Pulsar X2 V2 Mini, Pulsar X2 CrazyLight Mini, ATK VXE R1 SE+, VXE R1 Pro Max, Taidu TSG808",
+  "kind": "mouse",
+  "conn": "2.4 GHz dongle and USB cable",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "Pulsar X2 V3 Mini 8K",
+  "kind": "mouse",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "Pulsar, ATK / VXE, Redragon M916/M913, HECATE",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver and USB cable",
+  "status": "verified",
+  "note": "mixed (some confirmed)"
+ },
+ {
+  "name": "Rapoo VT7 Gen 2 / V700DIY-98 / VT9 Pro V2",
+  "kind": "mouse",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "Rapoo VT9 Pro, original 24AE:185A",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver",
+  "status": "verified",
+  "note": "capture confirms 100% discharging; recovered app path unverified"
+ },
+ {
+  "name": "Razer Barracuda Pro (2.4 GHz)",
+  "kind": "headset",
+  "conn": "2.4 GHz dongle",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "Razer Barracuda Pro receiver and Barracuda X (2022)",
+  "kind": "headset",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "Razer Basilisk V3 Pro, Razer Basilisk Ultimate (tested by users)",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "Razer BlackShark V2 HyperSpeed",
+  "kind": "headset",
+  "conn": "2.4 GHz receiver (1532:0565) or USB-C cable (1532:056E)",
+  "status": "verified",
+  "note": "yes (level and charging confirmed by reporter)"
+ },
+ {
+  "name": "Razer BlackShark V2 Pro (2020)",
+  "kind": "headset",
+  "conn": "2.4 GHz receiver",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "Razer BlackShark V2 Pro (2023)",
+  "kind": "headset",
+  "conn": "2.4 GHz receiver",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "Razer BlackShark V3",
+  "kind": "headset",
+  "conn": "2.4 GHz receiver (1532:057A)",
+  "status": "verified",
+  "note": "unverified"
+ },
+ {
+  "name": "Razer BlackShark V3 Pro",
+  "kind": "headset",
+  "conn": "2.4 GHz receiver (1532:0577)",
+  "status": "verified",
+  "note": "tray icon and charging animation confirmed by reporter in #519"
+ },
+ {
+  "name": "Razer BlackShark V3 X HyperSpeed",
+  "kind": "headset",
+  "conn": "2.4 GHz receiver (1532:057D) or USB cable (1532:057C)",
+  "status": "verified",
+  "note": "yes (battery and charging)"
+ },
+ {
+  "name": "Razer BlackWidow V3 Pro",
+  "kind": "keyboard",
+  "conn": "2.4 GHz receiver or USB cable",
+  "status": "unconfirmed",
+  "note": "no"
+ },
+ {
+  "name": "Razer DeathAdder V4 Pro",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "Razer DeathStalker V2 Pro TKL",
+  "kind": "keyboard",
+  "conn": "HyperSpeed receiver or USB cable",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "Razer DeathStalker V2 Pro, BlackWidow V3 Mini, V4 Mini and V4 Tenkeyless HyperSpeed",
+  "kind": "keyboard",
+  "conn": "HyperSpeed receiver or USB cable",
+  "status": "unconfirmed",
+  "note": "no"
+ },
+ {
+  "name": "Razer Kraken V4",
+  "kind": "headset",
+  "conn": "2.4 GHz receiver (1532:056C) or USB-C cable (1532:056B)",
+  "status": "verified",
+  "note": "yes (reporter confirmed)"
+ },
+ {
+  "name": "Razer Pro Click V2 Vertical Edition",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver or USB cable",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "Razer Pro Type Ultra receiver and Viper V3 Pro SE / V4 Pro",
+  "kind": "mouse",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "Razer wireless mice (other OpenRazer models)",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver or USB cable",
+  "status": "unconfirmed",
+  "note": "likely"
+ },
+ {
+  "name": "Red Square Alumix TKL (RSQ-20055)",
+  "kind": "keyboard",
+  "conn": "2.4 GHz receiver (342D:E411)",
+  "status": "unconfirmed",
+  "note": "no"
+ },
+ {
+  "name": "Redragon M991",
+  "kind": "mouse",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "Royal Kludge MG6 Pro",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver or USB cable",
+  "status": "verified",
+  "note": "unverified"
+ },
+ {
+  "name": "Scyrox 8K",
+  "kind": "mouse",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "Skullcandy PLYR",
+  "kind": "headset",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "Sony DualSense (PS5)",
+  "kind": "controller",
+  "conn": "USB or Bluetooth",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "Sony DualShock 4 (PS4)",
+  "kind": "controller",
+  "conn": "USB cable and Bluetooth",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "Sony INZONE H9 / H5 / H9 II (earlier H9 II level test confirmed)",
+  "kind": "headset",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "Sony INZONE H9 II",
+  "kind": "headset",
+  "conn": "2.4 GHz receiver (054c:0fa8), interface 5 FF04:0001",
+  "status": "verified",
+  "note": "level confirmed in an earlier test build (#387); new bounded reader and charging transitions await hardware confirmation"
+ },
+ {
+  "name": "Steam Controller (2025) with its puck",
+  "kind": "controller",
+  "conn": "2.4 GHz puck",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "Steam Controller (2025), wired 28DE:1302",
+  "kind": "controller",
+  "conn": "USB",
+  "status": "unconfirmed",
+  "note": "no - recovered path needs hardware confirmation"
+ },
+ {
+  "name": "SteelSeries Aerox 3 Wireless",
+  "kind": "mouse",
+  "conn": "2.4 GHz dongle",
+  "status": "unconfirmed",
+  "note": "no"
+ },
+ {
+  "name": "SteelSeries Arctis and GameBuds (other models)",
+  "kind": "headset",
+  "conn": "wireless base station or dongle",
+  "status": "unconfirmed",
+  "note": "likely"
+ },
+ {
+  "name": "SteelSeries Arctis Nova 3P Wireless",
+  "kind": "headset",
+  "conn": "",
+  "status": "verified",
+  "note": ""
+ },
+ {
+  "name": "SteelSeries Arctis Nova 7",
+  "kind": "headset",
+  "conn": "2.4 GHz dongle",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "SteelSeries Arctis Nova Elite",
+  "kind": "headset",
+  "conn": "Wireless base station",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "SteelSeries Arctis Nova Pro Wireless (1038:12E0, 1038:12E5 X)",
+  "kind": "headset",
+  "conn": "Wireless base station, interface 3 or 4",
+  "status": "unconfirmed",
+  "note": "no"
+ },
+ {
+  "name": "SteelSeries Rival 3 Wireless",
+  "kind": "mouse",
+  "conn": "2.4 GHz dongle",
+  "status": "unconfirmed",
+  "note": "no"
+ },
+ {
+  "name": "Teevolution Terra Pro",
+  "kind": "keyboard",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "Teevolution Terra Pro (F520/F523)",
+  "kind": "mouse",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "Turtle Beach Stealth Pro II (incl. Xbox 10f5:2285) / Stealth 700 Gen 3 / Atlas Air",
+  "kind": "headset",
+  "conn": "",
+  "status": "verified",
+  "note": ""
+ },
+ {
+  "name": "URX Core75",
+  "kind": "keyboard",
+  "conn": "",
+  "status": "unconfirmed",
+  "note": ""
+ },
+ {
+  "name": "VAXEE E1 Wireless (and other 3057 models)",
+  "kind": "mouse",
+  "conn": "4K dongle or USB cable",
+  "status": "verified",
+  "note": "yes (E1 Wireless; other models untested)"
+ },
+ {
+  "name": "VGN Dragonfly 4K (receiver and cable)",
+  "kind": "mouse",
+  "conn": "4K dongle or USB cable",
+  "status": "verified",
+  "note": "confirmed (receiver and cable)"
+ },
+ {
+  "name": "VGN N75 PRO",
+  "kind": "keyboard",
+  "conn": "320f:5088, exact VGN product",
+  "status": "verified",
+  "note": "Owner level in #407; charging not newly verified"
+ },
+ {
+  "name": "WLmouse Beast X and Beast X Mini Pro",
+  "kind": "mouse",
+  "conn": "8K or 1K receiver, or USB cable",
+  "status": "unconfirmed",
+  "note": "likely"
+ },
+ {
+  "name": "WLmouse Beast X Max",
+  "kind": "mouse",
+  "conn": "8K receiver or USB cable (36A7:A881)",
+  "status": "verified",
+  "note": "yes (receiver, cable charging and unplug recovery)"
+ },
+ {
+  "name": "Wraith W1 / W1 Freestyle",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver or USB cable",
+  "status": "verified",
+  "note": "unverified"
+ },
+ {
+  "name": "Xbox-compatible controllers (other models)",
+  "kind": "controller",
+  "conn": "USB or the Xbox wireless adapter",
+  "status": "unconfirmed",
+  "note": "likely"
+ },
+ {
+  "name": "Zaopin Z2 4K",
+  "kind": "mouse",
+  "conn": "2.4 GHz 4K receiver, USB-C, and Bluetooth LE",
+  "status": "verified",
+  "note": "yes"
+ },
+ {
+  "name": "ZOWIE EC-CW, DW series and U2",
+  "kind": "mouse",
+  "conn": "2.4 GHz receiver or USB cable",
+  "status": "verified",
+  "note": "unverified"
+ }
+]

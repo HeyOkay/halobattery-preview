@@ -1,0 +1,103 @@
+/* Screen groups keep their original artwork and typography. Only the vertical
+   rhythm adapts; long groups remain part of the ordinary document scroll. */
+:root { --header-h:65px; --card-h:calc(100dvh - var(--header-h)); }
+html { scroll-padding-top:var(--header-h); }
+.page-card { min-height:var(--card-h); display:flex; flex-direction:column; justify-content:center; position:relative; scroll-margin-top:0; scroll-snap-align:start; scroll-snap-stop:always; }
+/* Finger gestures use the browser's own inertia and paging, not wheel events.
+   A tall card is one oversized snap area, so all of its content stays reachable. */
+@media (pointer:coarse) { html { scroll-snap-type:y mandatory; } }
+html[data-touch-paging] { scroll-snap-type:y mandatory; }
+html[data-wheel-paging] { scroll-snap-type:none; }
+html[data-card-navigation] { scroll-snap-type:none; }
+@media (prefers-reduced-motion:reduce) {
+  html,html[data-touch-paging] { scroll-snap-type:none; }
+}
+.page-card[data-card="devices"] { justify-content:flex-start; }
+.page-card > .section { padding-block:clamp(28px,5dvh,64px); }
+.page-card > .hero { min-height:var(--card-h); flex:1; }
+.page-card[data-card="ring"] > .ring-lab { flex:1; display:grid; align-items:center; }
+.page-card[data-card="final"] > .final { flex:1; display:flex; flex-direction:column; justify-content:flex-end; padding-block:clamp(32px,5dvh,64px); }
+.page-card .site-footer { padding-block:28px 20px; }
+.page-card .footer-legal { margin-top:24px; padding-top:16px; }
+
+/* First reclaim decorative space. Never shrink the page's body type. */
+.page-card[data-compact] > .section { padding-block:24px; }
+.page-card[data-compact] .settings-head { margin-bottom:20px; }
+.page-card[data-compact] .win-stage { padding:20px; }
+.page-card[data-compact] .bento { margin-top:28px; }
+.page-card[data-compact] .cell { min-height:260px; gap:20px; padding:24px; }
+.page-card[data-compact] .cell-quiet { padding:0; }
+.page-card[data-compact] .lab-stage { padding:24px; gap:20px; }
+.page-card[data-compact] .lab-controls { margin-top:24px; gap:16px; }
+.page-card[data-compact] .ring-xl { max-width:300px; }
+.page-card[data-compact] .brands-row { padding-block:18px; }
+.page-card[data-tight] > .section { padding-block:12px; }
+.page-card[data-tight] .dev-controls { margin-top:24px; }
+.page-card[data-tight] .dev-count { margin-top:20px; }
+.page-card[data-tight] .dev-foot { margin-top:20px; }
+.page-card[data-tight] .dev-grid { gap:8px; }
+/* Longer translations can add just a few pixels to the ring group. Reclaim
+   decorative gaps before treating it as a card with scrollable content. */
+.page-card[data-card="ring"][data-tight] .lab-controls { margin-top:16px; }
+.page-card[data-card="ring"][data-tight] .legend { margin-top:16px; }
+.page-card[data-tight] .community-grid { row-gap:32px; }
+.page-card[data-tight] .stats { padding-top:24px; }
+.page-card[data-tight] > .final { padding-block:20px; }
+.page-card[data-tight] .final h2 { margin-top:20px; }
+.page-card[data-tight] .final-mark { width:80px; height:80px; }
+.page-card[data-tight] > .hero { padding-block:24px calc(var(--tb-h) + 32px); }
+
+/* Mid-width windows still have room for the counts and contributors on one
+   row. Keep that space instead of adding a nearly empty second card scroll. */
+@media (min-width:800px) and (min-height:850px) {
+  .page-card[data-card="community"][data-compact] .stats { grid-template-columns:repeat(3,auto) minmax(0,1fr); column-gap:clamp(20px,3vw,32px); }
+  .page-card[data-card="community"][data-compact] .people { grid-column:auto; justify-self:end; }
+  .page-card[data-card="community"][data-tight] .flow li:not(:last-child) { padding-bottom:20px; }
+}
+
+/* The interactive window uses the available height, just like a real resized
+   window. Its own content still scrolls, with full-size controls and text. */
+.page-card[data-card="settings"] .win { height:var(--preview-h,680px); min-height:400px; }
+.page-card[data-card="settings"] .win-stage { zoom:var(--preview-scale,1); }
+.page-card[data-card="settings"] .settings-head { max-width:100%; }
+@media (min-width:1000px) {
+  .page-card[data-card="settings"][data-compact] .settings-head { grid-template-columns:minmax(0,1fr) minmax(0,1fr); column-gap:40px; align-items:end; }
+  .page-card[data-card="settings"][data-compact] .section-lead { margin:0; }
+}
+/* No partial reveal at rest when a complete group fits the viewport. */
+.page-card .reveal { animation:none; }
+
+/* A wide screen has room for side-by-side illustrations and copy. Reclaim
+   empty vertical space rather than scaling the text or cropping the content. */
+@media (min-width:1100px) and (min-height:850px) {
+  .page-card > #features { padding-block:20px; }
+  #features .features-title { max-width:none; }
+  #features .bento { margin-top:20px; gap:14px; }
+  #features .cell { grid-column:span 6; min-height:0; padding:20px; gap:20px; }
+  #features .cell-text { max-width:none; }
+  #features .cell-vendor .cell-text { align-self:center; }
+  #features .cell-quiet { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); padding:0; gap:0; }
+  #features .quiet-scene { min-height:0; padding:16px; margin:0; border-bottom:0; border-right:1px solid var(--line); }
+  #features .cell-quiet .cell-text { padding:20px; align-self:center; }
+  #features .lang-list { grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:20px; }
+  #features .lang-list li { padding-block:4px; gap:8px; }
+  #features .cell-lang { justify-content:flex-start; gap:16px; }
+  #features .cell-json { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); align-items:center; }
+  #features .code { min-width:0; padding:12px; white-space:pre-wrap; overflow-wrap:anywhere; overflow-x:clip; }
+  #features .cell-time { display:grid; grid-template-columns:minmax(min-content,1.1fr) minmax(0,1fr); align-items:center; }
+  #features .time-tip { align-self:start; padding-top:6px; }
+  #features .time-big { font-size:clamp(3.5rem,5vw,4.25rem); }
+  #features .cell-update { display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); align-items:center; }
+}
+
+/* Fade each button itself. An opacity animation on their parent would isolate
+   the backdrop for the whole entrance, making the acrylic start working late. */
+.hero .cta-row.rise { animation:none; }
+@media (prefers-reduced-motion:no-preference) {
+  .hero .cta-row.rise > .btn { animation:rise .9s var(--ease-out) backwards; animation-delay:calc(var(--d,0) * 90ms + 60ms); }
+}
+.hero .btn-ghost {
+  -webkit-backdrop-filter:blur(20px) saturate(1.25);
+  backdrop-filter:blur(20px) saturate(1.25);
+  box-shadow:inset 0 1px 0 light-dark(rgb(255 255 255 / .6),rgb(255 255 255 / .08));
+}

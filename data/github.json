@@ -1,0 +1,98 @@
+{
+ "stars": 843,
+ "forks": 99,
+ "downloads": 19575,
+ "version": "v1.17.0",
+ "published": "2026-11-12T21:46:30Z",
+ "assets": {
+  "setup": {
+   "name": "HaloBattery-1.17.0-setup.exe",
+   "size": 17984207,
+   "url": "https://github.com/HeyOkay/HaloBattery/releases/download/v1.17.0/HaloBattery-1.17.0-setup.exe"
+  },
+  "zip": {
+   "name": "HaloBattery-1.17.0.zip",
+   "size": 23378817,
+   "url": "https://github.com/HeyOkay/HaloBattery/releases/download/v1.17.0/HaloBattery-1.17.0.zip"
+  },
+  "sums": {
+   "name": "SHA256SUMS.txt",
+   "size": 186,
+   "url": "https://github.com/HeyOkay/HaloBattery/releases/download/v1.17.0/SHA256SUMS.txt"
+  }
+ },
+ "prerelease": {
+  "name": "Pre-release 1.18.0 (c9a0dc7)",
+  "tag": "pre-1.18.0-c9a0dc7-45023621988-1",
+  "url": "https://github.com/HeyOkay/HaloBattery/releases/tag/pre-1.18.0-c9a0dc7-45023621988-1",
+  "published": "2026-11-22T12:49:24Z",
+  "version": "1.18.0 (c9a0dc7)"
+ },
+ "contributors": [
+  {
+   "login": "HeyOkay",
+   "url": "https://github.com/HeyOkay",
+   "avatar": "/halobattery-preview/assets/avatars/HeyOkay.png"
+  },
+  {
+   "login": "casparas123",
+   "url": "https://github.com/casparas123",
+   "avatar": "/halobattery-preview/assets/avatars/casparas123.png"
+  },
+  {
+   "login": "ahmedkhursheed23",
+   "url": "https://github.com/ahmedkhursheed23",
+   "avatar": "/halobattery-preview/assets/avatars/ahmedkhursheed23.png"
+  },
+  {
+   "login": "akhursh99",
+   "url": "https://github.com/akhursh99",
+   "avatar": "/halobattery-preview/assets/avatars/akhursh99.png"
+  },
+  {
+   "login": "BestInTest",
+   "url": "https://github.com/BestInTest",
+   "avatar": "/halobattery-preview/assets/avatars/BestInTest.png"
+  },
+  {
+   "login": "dendr203",
+   "url": "https://github.com/dendr203",
+   "avatar": "/halobattery-preview/assets/avatars/dendr203.png"
+  },
+  {
+   "login": "DCVolo",
+   "url": "https://github.com/DCVolo",
+   "avatar": "/halobattery-preview/assets/avatars/DCVolo.png"
+  },
+  {
+   "login": "joeabouserhal",
+   "url": "https://github.com/joeabouserhal",
+   "avatar": "/halobattery-preview/assets/avatars/joeabouserhal.png"
+  },
+  {
+   "login": "lmeyer",
+   "url": "https://github.com/lmeyer",
+   "avatar": "/halobattery-preview/assets/avatars/lmeyer.png"
+  },
+  {
+   "login": "Malo-LC",
+   "url": "https://github.com/Malo-LC",
+   "avatar": "/halobattery-preview/assets/avatars/Malo-LC.png"
+  },
+  {
+   "login": "NuRoZ123",
+   "url": "https://github.com/NuRoZ123",
+   "avatar": "/halobattery-preview/assets/avatars/NuRoZ123.png"
+  },
+  {
+   "login": "kipavy",
+   "url": "https://github.com/kipavy",
+   "avatar": "/halobattery-preview/assets/avatars/kipavy.png"
+  },
+  {
+   "login": "nqble",
+   "url": "https://github.com/nqble",
+   "avatar": "/halobattery-preview/assets/avatars/nqble.png"
+  }
+ ]
+}
