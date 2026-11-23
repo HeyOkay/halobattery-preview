@@ -1,22 +1,19 @@
 /* Screen groups keep their original artwork and typography. Only the vertical
    rhythm adapts; long groups remain part of the ordinary document scroll. */
-:root { --header-h:65px; --card-h:calc(100dvh - var(--header-h)); }
+:root { --header-h:65px; --card-h:calc(100dvh - var(--header-h)); --card-space:5dvh; }
 html { scroll-padding-top:var(--header-h); }
-.page-card { min-height:var(--card-h); display:flex; flex-direction:column; justify-content:center; position:relative; scroll-margin-top:0; scroll-snap-align:start; scroll-snap-stop:always; }
-/* Finger gestures use the browser's own inertia and paging, not wheel events.
-   A tall card is one oversized snap area, so all of its content stays reachable. */
-@media (pointer:coarse) { html { scroll-snap-type:y mandatory; } }
-html[data-touch-paging] { scroll-snap-type:y mandatory; }
-html[data-wheel-paging] { scroll-snap-type:none; }
-html[data-card-navigation] { scroll-snap-type:none; }
-@media (prefers-reduced-motion:reduce) {
-  html,html[data-touch-paging] { scroll-snap-type:none; }
+.page-card { min-height:var(--card-h); display:flex; flex-direction:column; justify-content:center; position:relative; scroll-margin-top:0; }
+/* Phone gestures use ordinary document scrolling, including native chaining
+   out of Settings. Stable viewport units avoid toolbar-driven card resizing. */
+@media (hover:none) and (pointer:coarse) {
+  :root { --card-h:calc(100svh - var(--header-h)); --card-space:5svh; }
+  .win-content { overscroll-behavior-y:auto; }
 }
 .page-card[data-card="devices"] { justify-content:flex-start; }
-.page-card > .section { padding-block:clamp(28px,5dvh,64px); }
+.page-card > .section { padding-block:clamp(28px,var(--card-space),64px); }
 .page-card > .hero { min-height:var(--card-h); flex:1; }
 .page-card[data-card="ring"] > .ring-lab { flex:1; display:grid; align-items:center; }
-.page-card[data-card="final"] > .final { flex:1; display:flex; flex-direction:column; justify-content:flex-end; padding-block:clamp(32px,5dvh,64px); }
+.page-card[data-card="final"] > .final { flex:1; display:flex; flex-direction:column; justify-content:flex-end; padding-block:clamp(32px,var(--card-space),64px); }
 .page-card .site-footer { padding-block:28px 20px; }
 .page-card .footer-legal { margin-top:24px; padding-top:16px; }
 

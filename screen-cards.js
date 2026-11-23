@@ -3,6 +3,7 @@
 const cards=[...document.querySelectorAll('.page-card')];
 const header=document.querySelector('.site-header');
 const reduce=matchMedia('(prefers-reduced-motion: reduce)');
+const nativeTouch=matchMedia('(hover:none) and (pointer:coarse)');
 let viewport=innerHeight,headerHeight=65,layoutFrame=0;
 let animation=0,motion=null,lockedUntil=0,intent=0,lastWheel=0,lastDirection=0;
 const edgeGates=new Map();
@@ -13,9 +14,9 @@ function activeCard(){
   // The heading visible beneath the header identifies a long group's owner.
   return cards.findLast(card=>topOf(card)<=scrollY+3)??cards[0];
 }
-function stop(keepNativeSuspended=false){
+function stop(keepNavigationState=false){
   cancelAnimationFrame(animation);animation=0;motion=null;
-  if(keepNativeSuspended!==true)document.documentElement.removeAttribute('data-card-navigation');
+  if(keepNavigationState!==true)document.documentElement.removeAttribute('data-card-navigation');
 }
 function animateTo(target,transition=false,anchor=null,duration=580){
   const now=performance.now();
@@ -23,7 +24,7 @@ function animateTo(target,transition=false,anchor=null,duration=580){
   if(reduce.matches||duration<=0){stop();scrollTo({top:target,behavior:'instant'});if(transition)lockedUntil=now+120;return;}
   if(!transition&&motion?.kind==='content') {motion.target=target;return;}
   stop(true);
-  // Touch snapping must not fight explicit link or wheel animation frames.
+  // Explicit link and desktop wheel navigation own this animation only.
   document.documentElement.setAttribute('data-card-navigation','');
   motion={kind:transition?'card':'content',from:scrollY,position:scrollY,target,started:now,previous:now,anchor,duration};
   if(transition)lockedUntil=now+duration+120;
@@ -58,6 +59,9 @@ function fit(){
     card.removeAttribute('data-compact');
     card.removeAttribute('data-tight');
     card.style.removeProperty('--preview-h');card.style.removeProperty('--preview-scale');
+    // Phones keep the natural document layout. Do not refit every section
+    // when browser controls change the visible viewport during a swipe.
+    if(nativeTouch.matches)continue;
     // Search results are dynamic. Keep this group's top spacing and filter
     // layout constant instead of fitting it again to each result count.
     if(card.dataset.card==='devices'){
@@ -85,7 +89,7 @@ function fit(){
   // Layout fitting may run while a link or double-click is navigating. Keep
   // that destination and its remaining duration instead of cancelling it.
   if(navigation)animateTo(bounds(navigation.anchor.card)[navigation.anchor.edge],true,navigation.anchor,navigation.remaining);
-  else if(wasAligned)scrollTo({top:bounds(owner).start,behavior:'instant'});
+  else if(wasAligned&&!nativeTouch.matches)scrollTo({top:bounds(owner).start,behavior:'instant'});
 }
 const queueFit=()=>{if(!layoutFrame)layoutFrame=requestAnimationFrame(fit);};
 new ResizeObserver(queueFit).observe(header);
@@ -133,6 +137,8 @@ addEventListener('scroll',()=>{
 },{passive:true,capture:true});
 function resetGesture(){intent=0;lastWheel=0;lastDirection=0;edgeGates.clear();}
 addEventListener('wheel',event=>{
+  // Mobile browsers own both touch inertia and any attached mouse scrolling.
+  if(nativeTouch.matches)return;
   const root=document.documentElement;
   if(!root.hasAttribute('data-wheel-paging'))root.setAttribute('data-wheel-paging','');
   if(event.ctrlKey){stop();lockedUntil=0;resetGesture();return;}
@@ -179,45 +185,11 @@ addEventListener('wheel',event=>{
   }
 },{passive:false});
 
-// Manual scrolling/focus must always be able to interrupt our motion.
-addEventListener('pointerdown',event=>{
-  stop();lockedUntil=0;resetGesture();
-  if(event.pointerType==='touch'){
-    document.documentElement.removeAttribute('data-wheel-paging');
-    document.documentElement.setAttribute('data-touch-paging','');
-  }
-},{passive:true});
-let touchScroller=null,touchX=0,touchY=0,touchScrolled=false,touchBehavior='';
-function releaseTouchScroller(){
-  if(touchScroller)touchScroller.style.overscrollBehaviorY=touchBehavior;
-  touchScroller=null;
-}
-addEventListener('touchstart',event=>{
-  stop();lockedUntil=0;resetGesture();
-  document.documentElement.removeAttribute('data-wheel-paging');
-  document.documentElement.setAttribute('data-touch-paging','');
-  releaseTouchScroller();
-  if(event.touches.length!==1)return;
-  touchScroller=event.composedPath().find(node=>node instanceof Element&&node.matches('.win-content'))??null;
-  if(!touchScroller)return;
-  touchX=event.touches[0].clientX;touchY=event.touches[0].clientY;touchScrolled=false;
-  touchBehavior=touchScroller.style.overscrollBehaviorY;
-  // Native touch latching needs chaining enabled before an outward swipe
-  // starts at an edge. An inward swipe immediately restores containment.
-  const atEdge=touchScroller.scrollTop<=1||touchScroller.scrollTop+touchScroller.clientHeight>=touchScroller.scrollHeight-1;
-  touchScroller.style.overscrollBehaviorY=atEdge?'auto':'contain';
-},{passive:true});
-addEventListener('touchmove',event=>{
-  if(!touchScroller)return;
-  if(event.touches.length!==1){releaseTouchScroller();return;}
-  const dx=touchX-event.touches[0].clientX,dy=touchY-event.touches[0].clientY;
-  if(Math.abs(dy)<=Math.abs(dx)||!dy)return;
-  const canScroll=dy>0?touchScroller.scrollTop+touchScroller.clientHeight<touchScroller.scrollHeight-1:touchScroller.scrollTop>1;
-  touchScrolled=touchScrolled||canScroll;
-  touchScroller.style.overscrollBehaviorY=touchScrolled?'contain':'auto';
-},{passive:true});
-addEventListener('touchend',releaseTouchScroller,{passive:true});
-addEventListener('touchcancel',releaseTouchScroller,{passive:true});
+// A manual gesture interrupts explicit link navigation, then stays entirely
+// native: no touchmove cancellation, snap targets or scroll-chain overrides.
+const interrupt=()=>{stop();lockedUntil=0;resetGesture();};
+addEventListener('pointerdown',interrupt,{passive:true});
+addEventListener('touchstart',interrupt,{passive:true});
 addEventListener('keydown',event=>{if(['Tab','PageDown','PageUp','Home','End','ArrowDown','ArrowUp',' '].includes(event.key)){stop();lockedUntil=0;resetGesture();}});
 reduce.addEventListener('change',()=>{stop();lockedUntil=0;resetGesture();});
 function sectionTarget(fragment){
