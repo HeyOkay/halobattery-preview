@@ -51,6 +51,12 @@ html { scroll-padding-top:var(--header-h); }
   .page-card[data-card="community"][data-compact] .people { grid-column:auto; justify-self:end; }
   .page-card[data-card="community"][data-tight] .flow li:not(:last-child) { padding-bottom:20px; }
 }
+/* Once the rail occupies a full row, its old sidebar measure wastes space.
+   Let longer headings use that row before tightening any vertical spacing. */
+@media (min-width:800px) and (max-width:960px) and (min-height:850px) {
+  .page-card[data-card="community"][data-compact] .community-rail h2 { max-width:22ch; }
+  .page-card[data-card="community"][data-tight] .community-grid { row-gap:24px; }
+}
 
 /* The interactive window uses the available height, just like a real resized
    window. Its own content still scrolls, with full-size controls and text. */

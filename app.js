@@ -3,7 +3,7 @@ import { startWave } from "./wave.js?v=e8037ca5";
 import { initMarquee } from "./marquee.js?v=91279595";
 import { t, tp, nf } from "./i18n.js?v=cd39783d";
 import { initStatCounters } from "./stat-counters.js?v=a51d8dd9";
-import { initAvatarGroup } from "./avatar-group.js?v=3314f3be";
+import { initAvatarGroup } from "./avatar-group.js?v=fbcdc6e8";
 const REPO = "HeyOkay/HaloBattery";
 const SPRITE = "/halobattery-preview/assets/icons.svg?v=a5afeeda";   // absolute: the page may live at /fr/, /ja/ ...
 const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)");

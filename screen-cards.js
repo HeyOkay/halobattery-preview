@@ -6,6 +6,7 @@ const reduce=matchMedia('(prefers-reduced-motion: reduce)');
 const nativeTouch=matchMedia('(hover:none) and (pointer:coarse)');
 let viewport=innerHeight,headerHeight=65,layoutFrame=0;
 let animation=0,motion=null,lockedUntil=0,intent=0,lastWheel=0,lastDirection=0;
+let turned=false,wheelTail=false,previousDelta=0,fallingFrom=0,fallingSamples=0,risingSamples=0,tailFloor=Infinity;
 const edgeGates=new Map();
 const clamp=(n,a,b)=>Math.max(a,Math.min(b,n));
 const topOf=card=>card.getBoundingClientRect().top+scrollY-headerHeight;
@@ -68,7 +69,7 @@ function fit(){
       card.setAttribute('data-compact','');card.setAttribute('data-tight','');
       continue;
     }
-    if(card.offsetHeight>viewport-headerHeight+1)card.setAttribute('data-compact','');
+    if(card.getBoundingClientRect().height>viewport-headerHeight+1)card.setAttribute('data-compact','');
     const fitPreview=()=>{if(card.dataset.card==='settings'){
       card.style.removeProperty('--preview-scale');
       const section=card.querySelector('.settings'),head=card.querySelector('.settings-head'),stage=card.querySelector('.win-stage');
@@ -83,7 +84,7 @@ function fit(){
       if(available<natural&&available/natural>=.899)card.style.setProperty('--preview-scale',String(Math.max(.9,available/natural)));
     }};
     fitPreview();
-    const excess=card.offsetHeight-(viewport-headerHeight);
+    const excess=card.getBoundingClientRect().height-(viewport-headerHeight);
     if(excess>1&&excess<(viewport-headerHeight)*.2){card.setAttribute('data-tight','');fitPreview();}
   }
   // Layout fitting may run while a link or double-click is navigating. Keep
@@ -135,7 +136,35 @@ function waitAtEdge(owner,direction,now){
 addEventListener('scroll',()=>{
   for(const [owner,gate] of edgeGates)if(gate.until===null&&atEdge(owner,gate.direction))gate.until=performance.now()+160;
 },{passive:true,capture:true});
-function resetGesture(){intent=0;lastWheel=0;lastDirection=0;edgeGates.clear();}
+function resetWheelTrend(){turned=false;wheelTail=false;previousDelta=0;fallingFrom=0;fallingSamples=0;risingSamples=0;tailFloor=Infinity;}
+function resetGesture(){intent=0;lastWheel=0;lastDirection=0;edgeGates.clear();resetWheelTrend();}
+function followWheelTrend(magnitude){
+  if(wheelTail){
+    tailFloor=Math.min(tailFloor,magnitude);
+    // A renewed push can start before the event stream goes quiet. A large
+    // jump is clear immediately; small pushes need several growing samples
+    // above the noise floor so ordinary tail jitter cannot rearm paging.
+    if(magnitude-previousDelta>.0001)risingSamples++;
+    else if(magnitude<previousDelta)risingSamples=0;
+    const largePush=magnitude>=tailFloor+Math.max(4,tailFloor*.35);
+    const growingPush=risingSamples>=3&&magnitude>=tailFloor+Math.max(.15,tailFloor*.35);
+    if(!largePush&&!growingPush){previousDelta=magnitude;return;}
+    resetWheelTrend();intent=0;
+  }
+  if(previousDelta-magnitude>.0001){
+    // One abrupt step down is also common after an initial mouse notch.
+    // Measure subsequent decline from its new level, not from that outlier.
+    if(magnitude<previousDelta*.5){fallingFrom=magnitude;fallingSamples=0;}
+    else{if(!fallingSamples)fallingFrom=previousDelta;fallingSamples++;}
+  }else if(magnitude>previousDelta){fallingSamples=0;}
+  // Constant wheel input (including a large first notch followed by smaller
+  // equal deltas) remains usable. A sustained decline after a card turn is
+  // inertia and stays consumed until a gap, reversal or renewed acceleration.
+  if(turned&&fallingSamples>=3&&fallingFrom-magnitude>=Math.max(.05,fallingFrom*.08)){
+    wheelTail=true;tailFloor=magnitude;risingSamples=0;intent=0;
+  }
+  previousDelta=magnitude;
+}
 addEventListener('wheel',event=>{
   // Mobile browsers own both touch inertia and any attached mouse scrolling.
   if(nativeTouch.matches)return;
@@ -143,8 +172,8 @@ addEventListener('wheel',event=>{
   if(!root.hasAttribute('data-wheel-paging'))root.setAttribute('data-wheel-paging','');
   if(event.ctrlKey){stop();lockedUntil=0;resetGesture();return;}
   const direction=Math.sign(event.deltaY),now=performance.now();
-  if(now-lastWheel>220)intent=0;
-  if(direction!==lastDirection){intent=0;edgeGates.clear();}
+  if(now-lastWheel>220){intent=0;resetWheelTrend();}
+  if(direction!==lastDirection){intent=0;edgeGates.clear();resetWheelTrend();}
   lastWheel=now;lastDirection=direction;
   if(event.defaultPrevented||event.shiftKey||Math.abs(event.deltaX)>Math.abs(event.deltaY)||!event.deltaY){
     intent=0;return;
@@ -155,6 +184,7 @@ addEventListener('wheel',event=>{
     stop();lockedUntil=0;scrollingWithin(nested.element,direction);intent=0;return;
   }
   const delta=event.deltaY*(event.deltaMode===1?16:event.deltaMode===2?viewport:1);
+  followWheelTrend(Math.abs(delta));
   if(reduce.matches){
     stop();lockedUntil=0;
     if(nested){
@@ -164,6 +194,7 @@ addEventListener('wheel',event=>{
     return;
   }
   event.preventDefault();
+  if(wheelTail)return;
   if(now<lockedUntil)return;
   if(nested&&waitAtEdge(nested.element,direction,now)){intent=0;return;}
   const card=activeCard(),{start,end}=bounds(card);
@@ -181,6 +212,7 @@ addEventListener('wheel',event=>{
   intent=0;
   const next=cards[cards.indexOf(card)+direction];
   if(next){
+    turned=true;
     animateTo(direction>0?bounds(next).start:bounds(next).end,true,{card:next,edge:direction>0?'start':'end'});
   }
 },{passive:false});
