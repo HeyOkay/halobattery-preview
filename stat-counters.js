@@ -1,4 +1,5 @@
 import { canAnimate } from './vendor/number-flow-0.6.2.js';
+import { finishStaticCounterEffects } from './counter-spin.js?v=d4c755c2';
 
 // Match the critically damped reference spring without its rounded, repeated
 // tail samples. Normalize the response so the last frame reaches 1 smoothly.
@@ -24,9 +25,10 @@ export function initStatCounters(format, reduceMotion) {
       fallback.className = 'stat-value';
       const flow = document.createElement('number-flow');
       flow.setAttribute('aria-hidden', 'true');
+      if (matchMedia('(hover:none) and (pointer:coarse)').matches) flow.setAttribute('data-compositor-spin', '');
       // Keep digit layers stable when animation effects finish as recommended
       // by NumberFlow for unwanted repositioning at the end of a transition.
-      flow.setAttribute('data-will-change', '');
+      if (!flow.hasAttribute('data-compositor-spin')) flow.setAttribute('data-will-change', '');
       flow.locales = format.resolvedOptions().locale;
       flow.format = { maximumFractionDigits: 0 };
       // Only refine the rolling spring's precision. NumberFlow still owns
@@ -82,6 +84,7 @@ export function initStatCounters(format, reduceMotion) {
       for (const counter of group.counters) {
         counter.flow.animated = true;
         counter.flow.update(counter.target);
+        if (counter.flow.hasAttribute('data-compositor-spin')) finishStaticCounterEffects(counter.flow);
       }
     });
   }
@@ -125,6 +128,7 @@ export function initStatCounters(format, reduceMotion) {
     if (!counter.group.frame) {
       counter.flow.animated = counter.element.hasAttribute('data-counting') && !reduceMotion.matches && !document.hidden;
       counter.flow.update(target);
+      if (counter.flow.hasAttribute('data-compositor-spin')) finishStaticCounterEffects(counter.flow);
     }
   };
 }
