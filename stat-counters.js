@@ -1,5 +1,17 @@
 import { canAnimate } from './vendor/number-flow-0.6.2.js';
 
+// Match the critically damped reference spring without its rounded, repeated
+// tail samples. Normalize the response so the last frame reaches 1 smoothly.
+const springRate = 9.25;
+const springEnd = 1 - (1 + springRate) * Math.exp(-springRate);
+const spinTiming = {
+  duration: 900,
+  easing: `linear(${Array.from({ length: 121 }, (_, index) => {
+    const time = index / 120;
+    return ((1 - (1 + springRate * time) * Math.exp(-springRate * time)) / springEnd).toFixed(7);
+  }).join(',')})`,
+};
+
 // NumberFlow owns the digit animation; a visit only schedules its 0 -> target
 // update. Snapshot data stays independent of the displayed rolling digits.
 export function initStatCounters(format, reduceMotion) {
@@ -12,10 +24,14 @@ export function initStatCounters(format, reduceMotion) {
       fallback.className = 'stat-value';
       const flow = document.createElement('number-flow');
       flow.setAttribute('aria-hidden', 'true');
+      // Keep digit layers stable when animation effects finish as recommended
+      // by NumberFlow for unwanted repositioning at the end of a transition.
+      flow.setAttribute('data-will-change', '');
       flow.locales = format.resolvedOptions().locale;
       flow.format = { maximumFractionDigits: 0 };
-      // Retain NumberFlow's own spring, direction and character fades. The
-      // reference does not add a continuous plugin, easing or whole-text blur.
+      // Only refine the rolling spring's precision. NumberFlow still owns
+      // direction, character fades and masks, without whole-counter blur.
+      flow.spinTiming = spinTiming;
       element.replaceChildren(fallback, flow);
       const counter = { element, fallback, flow, target, group, digits: 0 };
       counters.set(element, counter);
